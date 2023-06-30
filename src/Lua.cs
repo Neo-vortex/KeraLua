@@ -2206,5 +2206,140 @@ namespace KeraLua
             NativeMethods.luaL_where(_luaState, level);
         }
     }
+    
+    /// <summary>
+    /// Buildong fuse for sandboxing
+    /// </summary>
+    public class FuseBuilder
+    {
+        private int _fuse;
+
+        /// <summary>
+        /// defult to 1
+        /// </summary>
+        public FuseBuilder()
+        {
+            _fuse = 1;
+        }
+
+        
+        /// <summary>
+        /// Add base lib
+        /// </summary>
+        /// <returns>FuseBuilder instance</returns>
+        public FuseBuilder WithBaseLibrary()
+        {
+            _fuse *= 2;
+            return this;
+        }
+
+        
+        /// <summary>
+        /// Add package lib
+        /// </summary>
+        /// <returns>FuseBuilder instance</returns>
+        public FuseBuilder WithPackageLibrary()
+        {
+            _fuse *= 3;
+            return this;
+        }
+
+        
+        /// <summary>
+        /// Add coroutine lib
+        /// </summary>
+        /// <returns>FuseBuilder instance</returns>
+        public FuseBuilder WithCoroutineLibrary()
+        {
+            _fuse *= 5;
+            return this;
+        }
+
+        /// <summary>
+        /// Add table lib
+        /// </summary>
+        /// <returns>FuseBuilder instance</returns>
+        public FuseBuilder WithTableLibrary()
+        {
+            _fuse *= 7;
+            return this;
+        }
+
+        
+        /// <summary>
+        /// Add io lib
+        /// </summary>
+        /// <returns>FuseBuilder instance</returns>
+        public FuseBuilder WithIOLibrary()
+        {
+            _fuse *= 11;
+            return this;
+        }
+
+        
+        /// <summary>
+        /// Add os lib
+        /// </summary>
+        /// <returns>FuseBuilder instance</returns>
+        public FuseBuilder WithOSLibrary()
+        {
+            _fuse *= 13;
+            return this;
+        }
+        
+        /// <summary>
+        /// Add string lib
+        /// </summary>
+        /// <returns>FuseBuilder instance</returns>
+
+        public FuseBuilder WithStringLibrary()
+        {
+            _fuse *= 17;
+            return this;
+        }
+
+        
+        /// <summary>
+        /// Add math lib
+        /// </summary>
+        /// <returns>FuseBuilder instance</returns>
+        public FuseBuilder WithMathLibrary()
+        {
+            _fuse *= 19;
+            return this;
+        }
+
+        
+        /// <summary>
+        /// Add utf8 lib
+        /// </summary>
+        /// <returns>FuseBuilder instance</returns>
+        public FuseBuilder WithUTF8Library()
+        {
+            _fuse *= 23;
+            return this;
+        }
+
+        
+        /// <summary>
+        /// Add debug lib
+        /// </summary>
+        /// <returns>FuseBuilder instance</returns>
+        public FuseBuilder WithDebugLibrary()
+        {
+            _fuse *= 29;
+            return this;
+        }
+
+        
+        /// <summary>
+        /// Build the fuse
+        /// </summary>
+        /// <returns>The fuse</returns>
+        public int Build()
+        {
+            return _fuse;
+        }
+    }
 }
 
