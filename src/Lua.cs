@@ -2008,7 +2008,7 @@ namespace KeraLua
         /// <summary>
         /// Opens all standard Lua libraries into the given state and set the sandbox fuse. default fuse is unlimited
         /// </summary>
-        public void OpenLibs(int sandboxFuse = 1023)
+        public void OpenLibs(long sandboxFuse = 6469693230)
         {
             NativeMethods.luaL_openlibs(_luaState,sandboxFuse );
         }

@@ -400,7 +400,7 @@ namespace KeraLua
         internal static extern lua_State luaL_newstate();
 
         [DllImport(LuaLibraryName, CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void luaL_openlibs(lua_State luaState , int sanfboxFuse);
+        internal static extern void luaL_openlibs(lua_State luaState , long sandboxFuse);
 
         [DllImport(LuaLibraryName, CallingConvention = CallingConvention.Cdecl)]
         internal static extern lua_Integer luaL_optinteger(lua_State luaState, int arg, lua_Integer d);
